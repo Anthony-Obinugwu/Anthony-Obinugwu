@@ -1,0 +1,12 @@
+{
+  "builds": [
+    { "src": "**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/about/?", "dest": "/about/index.html" },
+    { "src": "/project/?", "dest": "/project/index.html" },
+    { "src": "/resume/?", "dest": "/resume/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
