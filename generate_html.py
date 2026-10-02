@@ -356,7 +356,7 @@ def get_html(active_view="home"):
             <div class="col-md-4 col-sm-6 project-card-container">
               <div class="project-card">
                 <div class="project-img-wrapper">
-                  <img src="/assets/images/projects/trixmart.svg" alt="Trix Mart Project Thumbnail" />
+                  <img src="/assets/images/projects/trixmart.png" alt="Trix Mart Project Thumbnail" />
                 </div>
                 <div class="project-card-body">
                   <h3 class="project-title">Trix Mart</h3>
@@ -387,7 +387,7 @@ def get_html(active_view="home"):
             <div class="col-md-4 col-sm-6 project-card-container">
               <div class="project-card">
                 <div class="project-img-wrapper">
-                  <img src="/assets/images/projects/artisian.svg" alt="Artisian Project Thumbnail" />
+                  <img src="/assets/images/projects/artisian.png" alt="Artisian Project Thumbnail" />
                 </div>
                 <div class="project-card-body">
                   <h3 class="project-title">Artisian</h3>
@@ -418,7 +418,7 @@ def get_html(active_view="home"):
             <div class="col-md-4 col-sm-6 project-card-container">
               <div class="project-card">
                 <div class="project-img-wrapper">
-                  <img src="/assets/images/projects/repricer.svg" alt="TdotWheels Repricer Thumbnail" />
+                  <img src="/assets/images/projects/repricer.png" alt="TdotWheels Repricer Thumbnail" />
                 </div>
                 <div class="project-card-body">
                   <h3 class="project-title">TdotWheels Repricer</h3>
