@@ -1,0 +1,19 @@
+{
+  "name": "anthony-obinugwu-portfolio",
+  "version": "1.0.0",
+  "description": "Personal developer portfolio of Anthony Chinedu Obinugwu — Software Developer.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "software-developer",
+    "react-portfolio",
+    "full-stack"
+  ],
+  "author": "Anthony Obinugwu",
+  "license": "MIT"
+}

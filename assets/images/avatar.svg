@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-avatar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15803d"/>
+      <stop offset="50%" stop-color="#11301f"/>
+      <stop offset="100%" stop-color="#07140d"/>
+    </linearGradient>
+    <linearGradient id="glow-circle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1db954"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <clipPath id="avatar-clip">
+      <circle cx="150" cy="150" r="135"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer Glow Circle -->
+  <circle cx="150" cy="150" r="140" fill="none" stroke="url(#glow-circle)" stroke-width="5" opacity="0.9"/>
+  <circle cx="150" cy="150" r="135" fill="url(#bg-avatar)"/>
+
+  <g clip-path="url(#avatar-clip)">
+    <!-- Ambient Stars -->
+    <circle cx="60" cy="70" r="2" fill="#fff" opacity="0.6"/>
+    <circle cx="230" cy="90" r="2.5" fill="#1db954" opacity="0.8"/>
+    <circle cx="80" cy="200" r="1.5" fill="#fff" opacity="0.4"/>
+    <circle cx="240" cy="180" r="2" fill="#1db954" opacity="0.5"/>
+
+    <!-- Developer Character Portrait -->
+    <!-- Hoodie / Shoulders -->
+    <path d="M 50 320 C 50 230, 250 230, 250 320 Z" fill="#11301f"/>
+    <!-- Collar details -->
+    <path d="M 120 238 L 150 270 L 180 238 Z" fill="#0a1710"/>
+    <path d="M 135 220 L 150 248 L 165 220" stroke="#1db954" stroke-width="2" fill="none"/>
+
+    <!-- Neck -->
+    <rect x="135" y="190" width="30" height="40" rx="4" fill="#e2a77a"/>
+
+    <!-- Head -->
+    <ellipse cx="150" cy="150" rx="46" ry="52" fill="#f4be91"/>
+
+    <!-- Hair -->
+    <path d="M 102 145 C 98 100, 140 80, 198 90 C 204 110, 202 135, 198 145 C 190 120, 160 100, 130 110 C 110 116, 105 130, 102 145 Z" fill="#0a1710"/>
+    <!-- Side hair / ears -->
+    <ellipse cx="103" cy="152" rx="7" ry="10" fill="#f4be91"/>
+    <ellipse cx="197" cy="152" rx="7" ry="10" fill="#f4be91"/>
+
+    <!-- Eyebrows -->
+    <path d="M 122 132 Q 134 128 142 133" stroke="#0a1710" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 158 133 Q 166 128 178 132" stroke="#0a1710" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Glasses Frame -->
+    <rect x="116" y="137" width="28" height="22" rx="5" fill="#1db954" fill-opacity="0.15" stroke="#1db954" stroke-width="3"/>
+    <rect x="156" y="137" width="28" height="22" rx="5" fill="#1db954" fill-opacity="0.15" stroke="#1db954" stroke-width="3"/>
+    <line x1="144" y1="148" x2="156" y2="148" stroke="#1db954" stroke-width="3"/>
+    <line x1="104" y1="145" x2="116" y2="145" stroke="#1db954" stroke-width="2"/>
+    <line x1="184" y1="145" x2="196" y2="145" stroke="#1db954" stroke-width="2"/>
+
+    <!-- Eyes -->
+    <circle cx="130" cy="148" r="4.5" fill="#11301f"/>
+    <circle cx="170" cy="148" r="4.5" fill="#11301f"/>
+    <circle cx="132" cy="146" r="1.5" fill="#fff"/>
+    <circle cx="172" cy="146" r="1.5" fill="#fff"/>
+
+    <!-- Nose -->
+    <path d="M 150 152 L 148 165 L 153 166" stroke="#d89669" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Confident Smile -->
+    <path d="M 136 178 Q 150 188 164 178" stroke="#a65942" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Teeth glimmer -->
+    <path d="M 140 178 Q 150 184 160 178" fill="#fff" opacity="0.9"/>
+  </g>
+</svg>

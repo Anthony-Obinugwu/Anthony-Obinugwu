@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#04120b" />
+  <meta name="description" content="Portfolio of Anthony Chinedu Obinugwu - Software Engineer." />
+  <meta name="keywords" content="Anthony Obinugwu, Portfolio, Software Engineer, Java, Spring Boot, React, Node.js" />
+  <meta name="author" content="Anthony Chinedu Obinugwu" />
+  <title>Anthony Obinugwu - Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- Background Particle Canvas -->
+  <canvas id="tsparticles-canvas"></canvas>
+
+  <div class="site-content">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="#home" class="navbar-brand" onclick="navigateTo('home'); return false;">
+        <span class="navbar-brand-text">AO<span class="navbar-brand-dot">.</span></span>
+      </a>
+
+      <button class="navbar-toggler" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#home" id="nav-home" class="nav-link active" onclick="navigateTo('home'); return false;">
+            <svg viewBox="0 0 1024 1024"><path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.5c35.2 0 64.5-28.1 64.9-63.3.2-16.7-6.5-32.8-19.8-46zM559.4 868H464.6V640h94.8v228zm217.4 0H631.4V592c0-26.5-21.5-48-48-48h-143c-26.5 0-48 21.5-48 48v276H246.6V542.4l265.4-265.4 264.8 265.4V868z"/></svg> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" id="nav-about" class="nav-link " onclick="navigateTo('about'); return false;">
+            <svg viewBox="0 0 1024 1024"><path d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.6 375.6 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201-.4.2-.8.3-1.2.5-44.1 20.5-84 47.6-119.5 80.6-43.7 40.8-77.9 89.2-101.4 143.9a393.5 393.5 0 0 0-24.7 138.8c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8 0-170.1 138.9-309 309-309s309 138.9 309 309c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8 0-48.4-8.4-95.2-24.7-138.8-23.5-54.7-57.7-103.1-101.4-143.9zM512 538c-97.2 0-176-78.8-176-176s78.8-176 176-176 176 78.8 176 176-78.8 176-176 176z"/></svg> About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#project" id="nav-project" class="nav-link " onclick="navigateTo('project'); return false;">
+            <svg viewBox="0 0 1024 1024"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h40c4.4 0 8-3.6 8-8v-40c0-4.4-3.6-8-8-8h-40c-4.4 0-8 3.6-8 8v40c0 4.4 3.6 8 8 8zm-160 96h40c4.4 0 8-3.6 8-8v-40c0-4.4-3.6-8-8-8h-40c-4.4 0-8 3.6-8 8v40c0 4.4 3.6 8 8 8zm320 0h40c4.4 0 8-3.6 8-8v-40c0-4.4-3.6-8-8-8h-40c-4.4 0-8 3.6-8 8v40c0 4.4 3.6 8 8 8zM312 688h400c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H312c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z"/></svg> Projects
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#resume" id="nav-resume" class="nav-link " onclick="navigateTo('resume'); return false;">
+            <svg viewBox="0 0 1024 1024"><path d="M854.6 288.7L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.6-9.4-22.6zM790.2 320H608V137.8L790.2 320zM232 888V136h304v216c0 17.7 14.3 32 32 32h216v504H232zm160-240h240c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H392c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0-128h240c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H392c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8z"/></svg> Resume
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer" class="fork-btn">
+            <svg viewBox="0 0 1024 1024"><path d="M688 176c0-53-43-96-96-96s-96 43-96 96c0 39.8 24.2 74 58.7 88.3-4.8 54.4-26.6 86.8-65.7 101-38.3-14-59.8-46.1-64.6-99.7C454.7 251.3 478.7 217.4 478.7 176c0-53-43-96-96-96s-96 43-96 96c0 42.6 25.1 79.4 61.2 96.6 9.4 97 64.9 146.5 163.6 150.3v136.2C475.2 673.4 451.2 707.3 451.2 748c0 53 43 96 96 96s96-43 96-96c0-41.4-24.8-75.9-59.5-89.2V522.6c98.1-4 153.3-53.7 162.7-150 36.2-17.2 61.6-54 61.6-96.6zM382.7 136c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm164.5 652c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm44.8-612c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40z"/></svg> <svg viewBox="0 0 1024 1024"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-11.6-23.6-45.7-23.6-57.4 0l-113.5 230-253.9 36.9c-26.1 3.8-36.5 35.9-17.6 54.3l183.7 179-43.4 252.9c-4.5 26 22.8 45.8 46.1 33.6L512 753.6l227.3 119.4c23.3 12.2 50.6-7.7 46.1-33.6l-43.4-252.9 183.7-179c18.9-18.4 8.5-50.5-17.6-54.4z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ================= VIEW 1: HOME ================= -->
+    <div id="view-home" style="display: block;">
+      <!-- Hero Section -->
+      <section class="home-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 home-content">
+              <h1 class="heading">
+                Hi There! <span class="wave" role="img" aria-labelledby="wave">👋🏻</span>
+              </h1>
+              <h1 class="heading-name">
+                I'M <strong class="main-name">ANTHONY OBINUGWU</strong>
+              </h1>
+              <div class="typewriter-container">
+                <span id="typewriter-text" class="typewriter-text"></span><span class="typewriter-cursor">|</span>
+              </div>
+            </div>
+            <div class="col-md-5 text-center">
+              <img src="/assets/images/Pic.svg" alt="Anthony coding hero illustration" class="img-fluid home-hero-img" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home About / Introduce Section (Home2) -->
+      <section class="home-about-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12 home-about-description">
+              <h1 class="home-about-heading">
+                LET ME <span class="purple">INTRODUCE</span> MYSELF
+              </h1>
+              <div class="home-about-body">
+                <p>
+                  Hi! I'm <b class="purple">Anthony Chinedu Obinugwu</b>, a <b class="purple">Software Developer</b> based in <b class="purple">Lagos, Nigeria</b>. I fell in love with programming and enjoy building practical, scalable software products from idea to production. 🤷‍♂️
+                </p>
+                <p>
+                  I'm a Computer Science graduate of <i><b class="purple">Nile University of Nigeria</b></i>, and I currently work as a Backend Developer at ActivEdge Technologies while serving as <b class="purple">COO &amp; Co-Founder of Trix Mart</b>, a university focused marketplace for student businesses.
+                </p>
+                <p>
+                  I build end to end products with <i><b class="purple">Java, Spring Boot, JavaScript, TypeScript, React, Next.js, Node.js, Python, SQL, PostgreSQL, Supabase, Docker, Git &amp; AWS</b></i>, and I'm deeply into AI/ML and developer tooling.
+                </p>
+                <p>
+                  Outside of code, my passion is split between two things I never get tired of — <b class="purple">basketball 🏀</b> and <b class="purple">building software 💻</b>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="row">
+            <div class="col-12 home-about-social">
+              <h1>FIND ME ON</h1>
+              <p>Feel free to <span class="purple">connect</span> with me</p>
+              <ul class="home-about-social-links">
+                <li>
+                  <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer" class="home-social-icons" aria-label="GitHub">
+                    <svg viewBox="0 0 1024 1024"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c21.8 4 30-9.6 30-21.2 0-10.4-.4-44.6-.6-80.9-122 26.5-147.8-51.8-147.8-51.8-20.9-53-51-67.2-51-67.2-40.8-27.9 3.1-27.4 3.1-27.4 45.1 3.2 68.8 46.3 68.8 46.3 40.1 68.7 105.2 48.9 130.8 37.4 4.1-29.1 15.7-48.9 28.6-60.2-97.4-11.1-199.7-48.7-199.7-216.7 0-47.9 17.1-87 45.2-117.7-4.5-11.1-19.6-55.7 4.3-116.1 0 0 36.8-11.8 120.6 45 35-9.7 72.5-14.6 109.8-14.8 37.2.2 74.8 5.1 109.9 14.8 83.7-56.9 120.4-45 120.4-45 24 60.4 8.9 105 4.4 116.1 28.2 30.7 45.1 69.8 45.1 117.7 0 168.5-102.5 205.4-200.3 216.3 16.3 14 30.8 41.7 30.8 84.1 0 60.7-.5 109.8-.5 124.8 0 11.7 8.1 25.4 30.3 21.1 174.4-61.2 299.6-227.2 299.6-422.4 0-247.2-200.4-447.3-447.8-447.3z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://linkedin.com/in/anthony-obinugwu-03ba23199" target="_blank" rel="noreferrer" class="home-social-icons" aria-label="LinkedIn">
+                    <svg viewBox="0 0 1024 1024"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zM349.3 793.7H230.6V419.6h118.7v374.1zm-59.3-425.8c-38 0-68.8-30.8-68.8-68.8s30.8-68.8 68.8-68.8 68.8 30.8 68.8 68.8-30.7 68.8-68.8 68.8zm503.7 425.8H675V608c0-44.3-.8-101.2-61.7-101.2-61.7 0-71.2 48.2-71.2 98v188.9H423.5V419.6h113.9v51.1h1.6c15.9-30 54.6-61.7 112.3-61.7 120.1 0 142.3 79.1 142.3 181.9v202.8z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/1xnedu" target="_blank" rel="noreferrer" class="home-social-icons" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:obinugwuchinedu1@gmail.com" class="home-social-icons" aria-label="Email">
+                    <svg viewBox="0 0 1024 1024"><path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-80.8 108.9L531.7 514.4c-12 9.8-29.4 9.8-41.4 0L174.8 268.9V224h672.4v44.9zM128 776V320.5l264.4 216.3c17.5 14.3 39.1 22.2 61.6 22.2s44.1-7.9 61.6-22.2L780 320.5V776H128z"/></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VIEW 2: ABOUT ================= -->
+    <div id="view-about" style="display: none;">
+      <section class="about-section">
+        <div class="container">
+          <!-- Main About Card -->
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <h1 class="about-heading-title">
+                Know Who <strong class="purple">I'M</strong>
+              </h1>
+              <div class="about-card-view">
+                <p>
+                  Hello everyone! I am <span class="purple">Anthony Chinedu Obinugwu</span> from <span class="purple">Lagos, Nigeria</span>.
+                </p>
+                <p>
+                  I graduated with a B.Sc. in Computer Science from <span class="purple">Nile University of Nigeria</span>.
+                </p>
+                <p>
+                  Apart from coding, I enjoy exploring various activities that keep me inspired and motivated:
+                </p>
+                <ul class="about-activity">
+                  <li>
+                    <span class="activity-icon">🏀</span> Playing and watching basketball
+                  </li>
+                  <li>
+                    <span class="activity-icon">🤖</span> Exploring AI and emerging technologies
+                  </li>
+                  <li>
+                    <span class="activity-icon">🚀</span> Entrepreneurship and product development
+                  </li>
+                </ul>
+
+                <div class="about-quote">
+                  <p class="quote-text">"I'm not a great programmer; I'm just a good programmer with great habits."</p>
+                  <footer class="quote-author">— Kent Beck</footer>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 text-center">
+              <img src="/assets/images/about.svg" alt="Anthony about workstation" class="img-fluid" style="max-height: 400px;" />
+            </div>
+          </div>
+
+          <!-- Professional Skillset -->
+          <h1 class="section-title">
+            Professional <strong class="purple">Skillset</strong>
+          </h1>
+          <div class="skills-grid">
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M48.8 63.8c0 3.2 2.5 5.8 5.7 5.8s5.7-2.6 5.7-5.8c0-3.2-2.5-5.8-5.7-5.8-3.2 0-5.7 2.6-5.7 5.8zm-26.6 0c0 3.2 2.5 5.8 5.7 5.8s5.7-2.6 5.7-5.8c0-3.2-2.5-5.8-5.7-5.8s-5.7 2.6-5.7 5.8zm53.2 0c0 3.2 2.5 5.8 5.7 5.8s5.7-2.6 5.7-5.8c0-3.2-2.5-5.8-5.7-5.8s-5.7 2.6-5.7 5.8zM64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 114C36.4 114 14 91.6 14 64S36.4 14 64 14s50 22.4 50 50-22.4 50-50 50z"/></svg>
+              <span class="tech-icon-name">Java</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M117.8 77.2L68.6 114c-2.8 2.1-6.7 2.1-9.5 0L9.9 77.2c-3.1-2.3-4-6.6-2.1-9.8 1.9-3.2 6.1-4.2 9.3-2.3L64 99.9l46.9-34.8c3.2-1.9 7.4-.9 9.3 2.3 1.9 3.2 1 7.5-2.4 9.8zM64 82.2L17.1 47.4c-3.2-1.9-4.2-6.1-2.3-9.3 1.9-3.2 6.1-4.2 9.3-2.3L64 63.6l46-32.8c3.2-1.9 7.4-1 9.3 2.3 1.9 3.2.9 7.4-2.3 9.3L64 82.2z"/></svg>
+              <span class="tech-icon-name">Spring Boot</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M63.7 0C28.5 0 30.6 15.3 30.6 15.3l.1 15.8h33.6v4.8H18.9S0 33.7 0 69.1c0 35.3 16.5 34.1 16.5 34.1h9.9V89.1s-.5-16.9 16.6-16.9h33.4s16.1.3 16.1-15.6V15.3S94.9 0 63.7 0zm-14 9.7c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5zm78.3 49.2s-.5 16.9-16.6 16.9H38s-16.1-.3-16.1 15.6v41.3s-2.4 15.3 28.8 15.3c35.2 0 33.1-15.3 33.1-15.3l-.1-15.8H49.9v-4.8h45.4s18.9 2.2 18.9-33.2c0-35.3-16.2-34.1-16.2-34.1h-10v14.1zm-36.2 59.4c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/></svg>
+              <span class="tech-icon-name">Python</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M0 0h128v128H0z" fill="none"/><path d="M107 101.5c-4.4 7.6-11.4 12.3-21.4 12.3-15.3 0-24.5-9.3-24.5-23.9 0-14.8 9.5-24 24.3-24 9.6 0 16 4.3 20.3 11.2l-10 6c-2.6-4.5-5.9-6.9-10.4-6.9-7.3 0-11.7 5.1-11.7 13.7s4.4 13.7 11.7 13.7c5.1 0 8.6-2.8 11.3-7.5l10.7 5.4zM42.8 112.5c-11.6 0-19.1-5.6-22.3-14.8l10.9-4.5c2 5.1 5.9 8.2 11.5 8.2 5.7 0 9.2-2.7 9.2-8.3V67h12.5v26.4c0 12.3-7.8 19.1-21.8 19.1z"/></svg>
+              <span class="tech-icon-name">JavaScript</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M1.5 63.8C1.5 29.4 29.4 1.5 63.8 1.5s62.3 27.9 62.3 62.3-27.9 62.3-62.3 62.3S1.5 98.2 1.5 63.8zm39.6-18h45.6v9.8H68.8v50.2H56.5V55.6H41.1V45.8zm45.8 45.4c2.8 3.1 6.8 4.9 11.6 4.9 4.8 0 7.8-1.9 7.8-4.9 0-3.3-3.2-4.5-8.5-6.1-9.3-2.9-14.3-6.6-14.3-14.3 0-7.7 6.4-13.6 16.3-13.6 6.3 0 11.7 2.2 15.3 6.3l-5.6 6.8c-2.6-2.8-5.8-4.1-9.6-4.1-4 0-6.8 1.8-6.8 4.5 0 2.9 2.7 4.1 8.2 5.8 9.7 3.1 14.6 6.7 14.6 14.7 0 8.1-6.7 14.1-17.6 14.1-7.1 0-13.5-2.6-17.6-7.2l6.7-7z"/></svg>
+              <span class="tech-icon-name">TypeScript</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 48.7c-8.4 0-15.3 6.9-15.3 15.3s6.9 15.3 15.3 15.3 15.3-6.9 15.3-15.3S72.4 48.7 64 48.7zm0 24.5c-5.1 0-9.2-4.1-9.2-9.2s4.1-9.2 9.2-9.2 9.2 4.1 9.2 9.2-4.1 9.2-9.2 9.2zM128 64c0 8.6-8.9 16.8-24.1 23.3 4.2 11.1 5.9 21.6 4.3 29.3-2.2 10.6-10.7 15.7-22.1 13.3-10.8-2.3-22.5-9.8-32.9-20.9-10.4 11.1-22.1 18.6-32.9 20.9-11.4 2.4-19.9-2.7-22.1-13.3-1.6-7.7.1-18.2 4.3-29.3C7.3 80.8-.2 72.6 0 64c0-8.6 8.9-16.8 24.1-23.3-4.2-11.1-5.9-21.6-4.3-29.3 2.2-10.6 10.7-15.7 22.1-13.3 10.8 2.3 22.5 9.8 32.9 20.9C85.2 7.2 96.9-.3 107.7 2c11.4-2.4 19.9 2.7 22.1 13.3 1.6 7.7-.1 18.2-4.3 29.3C119.1 47.2 128 55.4 128 64z"/></svg>
+              <span class="tech-icon-name">React.js</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm25.9 88.5l-25.5-35.3v35.3h-8.8V39.5h8.8l25.5 35.3V39.5h8.8v49h-8.8z"/></svg>
+              <span class="tech-icon-name">Next.js</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M72.1 2.3c-4.9-2.9-11.3-2.9-16.2 0L8.2 30.1C3.3 33 0.1 38.3 0.1 44v55.5c0 5.7 3.2 11 8.1 13.9l47.7 27.8c4.9 2.9 11.3 2.9 16.2 0l47.7-27.8c4.9-2.9 8.1-8.2 8.1-13.9V44c0-5.7-3.2-11-8.1-13.9L72.1 2.3zM64 25.2l34.8 20.3-34.8 20.3-34.8-20.3L64 25.2z"/></svg>
+              <span class="tech-icon-name">Node.js</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M128 128H0V0h128L63.5 64.5z"/></svg>
+              <span class="tech-icon-name">Kotlin</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M79.7 0L17.5 62.2l19.4 19.4L99.1 19.4 79.7 0zM99.1 57.6L52.8 103.9l20.1 20.1 46.3-46.3-20.1-20.1zM52.8 65.5l19.4 19.4-19.4 19.4-19.4-19.4 19.4-19.4z"/></svg>
+              <span class="tech-icon-name">Flutter</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 102c-21 0-38-17-38-38s17-38 38-38 38 17 38 38-17 38-38 38z"/></svg>
+              <span class="tech-icon-name">React Native</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C54.7 15.3 43.1 33.7 43.1 56.4c0 23.9 14.5 42.9 20.9 49.3V0zm0 128c-3.1 0-8.9-8.4-14.8-17.7 5.7 3.5 11.7 5.2 14.8 5.2s9.1-1.7 14.8-5.2C72.9 119.6 67.1 128 64 128zm0-128v105.7c6.4-6.4 20.9-25.4 20.9-49.3 0-22.7-11.6-41.1-20.9-56.4z"/></svg>
+              <span class="tech-icon-name">MongoDB</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 8.7C33.5 8.7 8.7 33.5 8.7 64s24.8 55.3 55.3 55.3 55.3-24.8 55.3-55.3S94.5 8.7 64 8.7zm0 98.4c-23.8 0-43.1-19.3-43.1-43.1S40.2 20.9 64 20.9s43.1 19.3 43.1 43.1-19.3 43.1-43.1 43.1z"/></svg>
+              <span class="tech-icon-name">MySQL</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm20.8 91.5L64 74.2l-20.8 17.3 6.2-26.6-20.8-17.3h26.2L64 21.8l9.2 25.8h26.2L78.6 64.9l6.2 26.6z"/></svg>
+              <span class="tech-icon-name">PostgreSQL</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M21.7 89.2l14.9-80.4c.6-3.2 4.4-4.8 7-2.9l19.5 15.3-41.4 68zM57.6 42.4L71 18.5c1.7-3.1 6.2-3.1 7.9 0l38.8 70.7L57.6 42.4zm54.3 51.5L78.8 8.8c-1.3-2.6-4.9-3.1-6.9-1l-50 49.3 89.9 36.8z"/></svg>
+              <span class="tech-icon-name">Firebase</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M125.7 54.3c-2.2-1.7-8.9-3.7-18.7-2.8-.8-6.1-4.7-11.4-10-14.8l-4.4 2.6c4.5 2.8 7.8 7.3 8.3 12.6-7.8 1.4-17.5 5.5-22.3 11.4H4.5C2 63.3 0 65.3 0 67.8v22.7c0 20.3 16.5 36.8 36.8 36.8h56.7c17.5 0 32-12.2 35.7-28.7 9.8-3.4 16.6-11.6 17.3-22.3.2-3.7-.9-7.2-2.8-9.9 2-4.5 1.5-9.3-2-12.1z"/></svg>
+              <span class="tech-icon-name">Docker</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M124.6 57.3L70.7 3.4c-4.5-4.5-11.8-4.5-16.4 0L42.5 15.2l20.7 20.7c4.8-1.6 10.4-.5 14.2 3.3 3.8 3.8 4.9 9.4 3.3 14.2l19.9 19.9c4.8-1.6 10.4-.5 14.2 3.3 5.4 5.4 5.4 14.2 0 19.6s-14.2 5.4-19.6 0c-4-4-5-9.8-3-14.7L73.1 58.4v31.4c1.4 1 2.6 2.3 3.6 3.8 5.4 5.4 5.4 14.2 0 19.6s-14.2 5.4-19.6 0c-5.4-5.4-5.4-14.2 0-19.6 1.3-1.3 2.9-2.3 4.6-3V57.8c-1.7-.7-3.3-1.7-4.6-3-4-4-5-9.8-3-14.7L33.4 19.4 3.4 49.4c-4.5 4.5-4.5 11.8 0 16.4l53.9 53.9c4.5 4.5 11.8 4.5 16.4 0l50.9-50.9c4.6-4.6 4.6-11.9 0-16.5z"/></svg>
+              <span class="tech-icon-name">Git</span>
+            </div>
+          </div>
+
+          <!-- Tools I Use -->
+          <h1 class="section-title">
+            <strong class="purple">Tools</strong> I use
+          </h1>
+          <div class="skills-grid">
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M92.7 1.7L43.8 38.6 18.2 19 1.7 26.6v74.8l16.5 7.6 25.6-19.6 48.9 36.9 33.6-16.1V17.8L92.7 1.7zm1.6 34.7L46.8 64.2l47.5 27.8V36.4zM18.8 40.5l18.4 14.1L18.8 68.7V40.5zm75.5 68.8L46.8 77.2l47.5-27.8v59.9z"/></svg>
+              <span class="tech-icon-name">VS Code</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 30.5c18.5 0 33.5 15 33.5 33.5S82.5 97.5 64 97.5 30.5 82.5 30.5 64 45.5 30.5 64 30.5zm0 15c-10.2 0-18.5 8.3-18.5 18.5S53.8 82.5 64 82.5 82.5 74.2 82.5 64 74.2 45.5 64 45.5z"/></svg>
+              <span class="tech-icon-name">Android Studio</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M0 0h128v128H0z" fill="none"/><path d="M11.6 11.6h104.8v104.8H11.6z" fill="#0a1812" stroke="#1db954" stroke-width="4"/><text x="25" y="80" font-family="sans-serif" font-weight="900" font-size="45" fill="#1db954">IJ</text></svg>
+              <span class="tech-icon-name">IntelliJ IDEA</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 24c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm-15 25l35 15-35 15V49z"/></svg>
+              <span class="tech-icon-name">Postman</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm-20 40h40v48H44V40z"/></svg>
+              <span class="tech-icon-name">Insomnia</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M64 0L128 128H0z"/></svg>
+              <span class="tech-icon-name">Vercel</span>
+            </div>
+            <div class="tech-icon-card">
+              <svg viewBox="0 0 128 128"><path d="M42.7 0C30.9 0 21.3 9.6 21.3 21.3s9.6 21.3 21.3 21.3h21.3V0H42.7zm42.6 0H64v42.7h21.3c11.8 0 21.3-9.6 21.3-21.3S97.1 0 85.3 0zM42.7 42.7C30.9 42.7 21.3 52.3 21.3 64s9.6 21.3 21.3 21.3h21.3V42.7H42.7zm42.6 0H64v42.7h21.3c11.8 0 21.3-9.6 21.3-21.3S97.1 42.7 85.3 42.7zM42.7 85.3C30.9 85.3 21.3 94.9 21.3 106.7S30.9 128 42.7 128c11.8 0 21.3-9.6 21.3-21.3V85.3H42.7z"/></svg>
+              <span class="tech-icon-name">Figma</span>
+            </div>
+          </div>
+
+          <!-- Days I Code / GitHub Calendar Heatmap -->
+          <h1 class="section-title">
+            Days I <strong class="purple">Code</strong>
+          </h1>
+          <div class="calendar-wrapper">
+            <div class="calendar-header">
+              <span>GitHub Contributions &bull; @Anthony-Obinugwu</span>
+              <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer">View on GitHub</a>
+            </div>
+            <!-- Live GitHub contribution graph (real data by username, themed green) -->
+            <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer" class="gh-contrib-link">
+              <img src="https://ghchart.rshah.org/1db954/Anthony-Obinugwu"
+                   alt="Anthony Obinugwu's GitHub contribution graph" class="gh-contrib-img"
+                   loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VIEW 3: PROJECTS ================= -->
+    <div id="view-project" style="display: none;">
+      <section class="project-section">
+        <div class="container">
+          <h1 class="project-section-title">
+            My Recent <strong class="purple">Works</strong>
+          </h1>
+          <p class="project-section-subtitle">
+            Here are a few projects I've worked on recently.
+          </p>
+
+          <div class="row">
+            <!-- Project 1: Trix Mart -->
+            <div class="col-md-4 col-sm-6 project-card-container">
+              <div class="project-card">
+                <div class="project-img-wrapper">
+                  <img src="/assets/images/projects/trixmart.svg" alt="Trix Mart Project Thumbnail" />
+                </div>
+                <div class="project-card-body">
+                  <h3 class="project-title">Trix Mart</h3>
+                  <p class="project-desc">
+                    A university focused marketplace connecting students with student owned businesses — shopping, authentication, university selection, checkout, seller/student business tools, and verification infrastructure. Backed by a Node.js/Express WhatsApp bot (whatsapp-web.js + PostgreSQL) for seller onboarding. Mobile app launching soon.
+                  </p>
+                  <div class="project-tech-badges">
+                    <span class="tech-badge">Next.js 14</span>
+                    <span class="tech-badge">React 18</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">Supabase</span>
+                    <span class="tech-badge">Framer Motion</span>
+                  </div>
+                  <div class="project-btn-row">
+                    <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer" class="btn-primary">
+                      <svg viewBox="0 0 1024 1024"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c21.8 4 30-9.6 30-21.2 0-10.4-.4-44.6-.6-80.9-122 26.5-147.8-51.8-147.8-51.8-20.9-53-51-67.2-51-67.2-40.8-27.9 3.1-27.4 3.1-27.4 45.1 3.2 68.8 46.3 68.8 46.3 40.1 68.7 105.2 48.9 130.8 37.4 4.1-29.1 15.7-48.9 28.6-60.2-97.4-11.1-199.7-48.7-199.7-216.7 0-47.9 17.1-87 45.2-117.7-4.5-11.1-19.6-55.7 4.3-116.1 0 0 36.8-11.8 120.6 45 35-9.7 72.5-14.6 109.8-14.8 37.2.2 74.8 5.1 109.9 14.8 83.7-56.9 120.4-45 120.4-45 24 60.4 8.9 105 4.4 116.1 28.2 30.7 45.1 69.8 45.1 117.7 0 168.5-102.5 205.4-200.3 216.3 16.3 14 30.8 41.7 30.8 84.1 0 60.7-.5 109.8-.5 124.8 0 11.7 8.1 25.4 30.3 21.1 174.4-61.2 299.6-227.2 299.6-422.4 0-247.2-200.4-447.3-447.8-447.3z"/></svg> GitHub
+                    </a>
+                    <a href="https://www.trixmart.ng" target="_blank" rel="noreferrer" class="btn-primary" style="margin-left: 8px;">
+                      🔗 Live Site
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Artisian -->
+            <div class="col-md-4 col-sm-6 project-card-container">
+              <div class="project-card">
+                <div class="project-img-wrapper">
+                  <img src="/assets/images/projects/artisian.svg" alt="Artisian Project Thumbnail" />
+                </div>
+                <div class="project-card-body">
+                  <h3 class="project-title">Artisian</h3>
+                  <p class="project-desc">
+                    A location based platform that helps users find nearby roadside and mobile service providers — vulcanizers, tailors, cobblers, barbers and other artisans. Features GPS/location detection, interactive maps, routing, provider contact/navigation, and an admin dashboard.
+                  </p>
+                  <div class="project-tech-badges">
+                    <span class="tech-badge">React 19</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Vite</span>
+                    <span class="tech-badge">Mapbox GL</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">PostGIS</span>
+                  </div>
+                  <div class="project-btn-row">
+                    <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer" class="btn-primary">
+                      <svg viewBox="0 0 1024 1024"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c21.8 4 30-9.6 30-21.2 0-10.4-.4-44.6-.6-80.9-122 26.5-147.8-51.8-147.8-51.8-20.9-53-51-67.2-51-67.2-40.8-27.9 3.1-27.4 3.1-27.4 45.1 3.2 68.8 46.3 68.8 46.3 40.1 68.7 105.2 48.9 130.8 37.4 4.1-29.1 15.7-48.9 28.6-60.2-97.4-11.1-199.7-48.7-199.7-216.7 0-47.9 17.1-87 45.2-117.7-4.5-11.1-19.6-55.7 4.3-116.1 0 0 36.8-11.8 120.6 45 35-9.7 72.5-14.6 109.8-14.8 37.2.2 74.8 5.1 109.9 14.8 83.7-56.9 120.4-45 120.4-45 24 60.4 8.9 105 4.4 116.1 28.2 30.7 45.1 69.8 45.1 117.7 0 168.5-102.5 205.4-200.3 216.3 16.3 14 30.8 41.7 30.8 84.1 0 60.7-.5 109.8-.5 124.8 0 11.7 8.1 25.4 30.3 21.1 174.4-61.2 299.6-227.2 299.6-422.4 0-247.2-200.4-447.3-447.8-447.3z"/></svg> GitHub
+                    </a>
+                    <a href="https://www.thesenpcs.com" target="_blank" rel="noreferrer" class="btn-primary" style="margin-left: 8px;">
+                      🔗 Live Site
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: TdotWheels Repricer -->
+            <div class="col-md-4 col-sm-6 project-card-container">
+              <div class="project-card">
+                <div class="project-img-wrapper">
+                  <img src="/assets/images/projects/repricer.svg" alt="TdotWheels Repricer Thumbnail" />
+                </div>
+                <div class="project-card-body">
+                  <h3 class="project-title">TdotWheels Repricer</h3>
+                  <p class="project-desc">
+                    An ecommerce automation system for T-Dot Wheels. It integrates with Shopify and Supabase and uses browser automation / web scraping to retrieve competitor pricing and product data, then updates and manages pricing automatically to reduce manual monitoring.
+                  </p>
+                  <div class="project-tech-badges">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">Shopify API</span>
+                    <span class="tech-badge">Playwright</span>
+                    <span class="tech-badge">Puppeteer</span>
+                    <span class="tech-badge">Supabase</span>
+                  </div>
+                  <div class="project-btn-row">
+                    <a href="https://github.com/Anthony-Obinugwu/TdotWheels-Repricer" target="_blank" rel="noreferrer" class="btn-primary">
+                      <svg viewBox="0 0 1024 1024"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c21.8 4 30-9.6 30-21.2 0-10.4-.4-44.6-.6-80.9-122 26.5-147.8-51.8-147.8-51.8-20.9-53-51-67.2-51-67.2-40.8-27.9 3.1-27.4 3.1-27.4 45.1 3.2 68.8 46.3 68.8 46.3 40.1 68.7 105.2 48.9 130.8 37.4 4.1-29.1 15.7-48.9 28.6-60.2-97.4-11.1-199.7-48.7-199.7-216.7 0-47.9 17.1-87 45.2-117.7-4.5-11.1-19.6-55.7 4.3-116.1 0 0 36.8-11.8 120.6 45 35-9.7 72.5-14.6 109.8-14.8 37.2.2 74.8 5.1 109.9 14.8 83.7-56.9 120.4-45 120.4-45 24 60.4 8.9 105 4.4 116.1 28.2 30.7 45.1 69.8 45.1 117.7 0 168.5-102.5 205.4-200.3 216.3 16.3 14 30.8 41.7 30.8 84.1 0 60.7-.5 109.8-.5 124.8 0 11.7 8.1 25.4 30.3 21.1 174.4-61.2 299.6-227.2 299.6-422.4 0-247.2-200.4-447.3-447.8-447.3z"/></svg> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VIEW 4: RESUME ================= -->
+    <div id="view-resume" style="display: none;">
+      <section class="resume-section">
+        <div class="container">
+          <h1 class="resume-heading">
+            My Professional <strong class="purple">CV</strong>
+          </h1>
+          <p class="resume-subtitle">
+            Backend Developer | Full Stack Development • QA Engineering
+          </p>
+
+          <a href="#download" onclick="window.downloadCV(event)" class="btn-download-cv">
+            <svg viewBox="0 0 1024 1024"><path d="M505.7 661a8 8 0 0 0 12.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"/></svg> &nbsp;Download CV
+          </a>
+
+          <!-- Contact Cards Summary -->
+          <div class="resume-contact-card">
+            <h3 class="contact-card-title">Contact & Professional Links</h3>
+            <div class="contact-grid">
+              <div class="contact-item">
+                <span><strong>Email:</strong></span>
+                <a href="mailto:obinugwuchinedu1@gmail.com">obinugwuchinedu1@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <span><strong>Phone:</strong></span>
+                <a href="tel:+2347017349468">+234 701 734 9468</a>
+              </div>
+              <div class="contact-item">
+                <span><strong>X (Twitter):</strong></span>
+                <a href="https://x.com/1xnedu" target="_blank" rel="noreferrer">@1xnedu</a>
+              </div>
+              <div class="contact-item">
+                <span><strong>Location:</strong></span>
+                <span>Lagos, Nigeria</span>
+              </div>
+              <div class="contact-item">
+                <span><strong>GitHub:</strong></span>
+                <a href="https://github.com/Anthony-Obinugwu" target="_blank" rel="noreferrer">Anthony-Obinugwu</a>
+              </div>
+              <div class="contact-item">
+                <span><strong>LinkedIn:</strong></span>
+                <a href="http://linkedin.com/in/anthony-obinugwu-03ba23199" target="_blank" rel="noreferrer">Anthony Obinugwu</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive CV Document Viewer -->
+          <div class="cv-viewer-container" id="printable-cv">
+            <div class="cv-header">
+              <h1 class="cv-name">Anthony Chinedu Obinugwu</h1>
+              <div class="cv-title">Backend Developer | Full Stack Development • QA Engineering</div>
+              <div class="cv-contacts">
+                <span>obinugwuchinedu1@gmail.com</span>
+                <span>+234 701 734 9468</span>
+                <span>Lagos, Nigeria</span>
+                <span>github.com/Anthony-Obinugwu</span>
+                <span>linkedin.com/in/anthony-obinugwu-03ba23199</span>
+              </div>
+            </div>
+
+            <!-- Profile Summary -->
+            <div class="cv-section-title">Professional Summary</div>
+            <p class="cv-text">
+              Computer Science graduate and Backend Developer with hands on experience across full stack development, backend engineering, and quality assurance. I build practical, scalable products — from university marketplaces to ecommerce automation — using Java, Spring, JavaScript/TypeScript, React, Next.js, Node.js, and PostgreSQL. COO and Co-Founder of Trix Mart, with a strong interest in AI/ML and developer tooling.
+            </p>
+
+            <!-- Experience -->
+            <div class="cv-section-title">Professional Experience</div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>Backend Developer</span>
+                <span>Apr 2026 – Present</span>
+              </div>
+              <div class="cv-item-sub">ActivEdge Technologies &bull; Lagos, Nigeria</div>
+              <ul class="cv-bullet-list">
+                <li>Design and build backend services and REST APIs using Java, Spring, and Node.js.</li>
+                <li>Model and maintain relational data with PostgreSQL, focusing on reliability and performance.</li>
+                <li>Collaborate across the team to ship, test, and maintain production features.</li>
+              </ul>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>IT Professional / Software Developer</span>
+                <span>Feb 2025 – Feb 2026</span>
+              </div>
+              <div class="cv-item-sub">Outtabox Future Forward Workspaces &bull; Abuja, Nigeria</div>
+              <ul class="cv-bullet-list">
+                <li>Integrated Zoho Workplace systems into daily operations, increasing process efficiency by 40% and reducing manual task time by ~25 hours weekly across teams.</li>
+                <li>Built and optimized multiple websites with targeted SEO strategies, boosting organic traffic by over 150% and achieving top rankings across core service categories.</li>
+                <li>Led staff enablement and website maintenance initiatives, improving team productivity by 30% and keeping the company on the first page across key digital platforms.</li>
+              </ul>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>Quality Assurance Engineer Intern</span>
+                <span>Jul 2024 – Sep 2024</span>
+              </div>
+              <div class="cv-item-sub">Trusted Transfers &bull; Lagos, Nigeria</div>
+              <ul class="cv-bullet-list">
+                <li>Streamlined QA workflows using Jam to record 100+ findings and bugs, cutting issue resolution time by 30% and improving overall product quality.</li>
+                <li>Performed complex database manipulations in PostgreSQL across multiple environments, increasing test data accuracy and reliability by 25%.</li>
+                <li>Conducted API testing with Postman to verify functionality and performance, surfacing critical issues that improved system response times by 15%.</li>
+              </ul>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>Java Backend Intern</span>
+                <span>Jul 2023 – Sep 2023</span>
+              </div>
+              <div class="cv-item-sub">ActivEdge Solutions &bull; Lagos, Nigeria</div>
+              <ul class="cv-bullet-list">
+                <li>Developed a Workday randomizer using the Spring framework and REST APIs, automating 50+ daily staff assignments.</li>
+                <li>Integrated RESTful services to streamline data retrieval, reducing manual scheduling errors by 40% and saving ~10 hours per week for administrative staff.</li>
+                <li>Collaborated with cross functional teams to optimize performance, achieving 25% faster processing and more accurate staff allocation.</li>
+              </ul>
+            </div>
+
+            <!-- Education -->
+            <div class="cv-section-title">Education &amp; Certifications</div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>B.Sc. in Computer Science</span>
+                <span>Graduated Oct 2025</span>
+              </div>
+              <div class="cv-item-sub">Nile University of Nigeria &bull; Abuja, Nigeria</div>
+            </div>
+            <div class="cv-item">
+              <ul class="cv-bullet-list">
+                <li><strong>AWS</strong> — AI Practitioner</li>
+                <li><strong>Microsoft &amp; LinkedIn</strong> — Azure AI Essentials Professional Certificate</li>
+                <li><strong>Accenture</strong> — Digital Skills: Artificial Intelligence</li>
+                <li><strong>freeCodeCamp</strong> — Responsive Web Design; Python (ongoing, Apr 2026)</li>
+                <li><strong>Weaviate</strong> — Vector Databases Professional (Mar 2026)</li>
+              </ul>
+            </div>
+
+            <!-- Skills -->
+            <div class="cv-section-title">Technical Competencies</div>
+            <ul class="cv-bullet-list">
+              <li><strong>Languages:</strong> Java, JavaScript, TypeScript, Python, SQL</li>
+              <li><strong>Frontend:</strong> React, Next.js, Vue 3, HTML5, CSS3, Tailwind CSS, Vite, Framer Motion</li>
+              <li><strong>Backend:</strong> Node.js, Express, Spring / Spring Boot, RESTful APIs</li>
+              <li><strong>Databases:</strong> PostgreSQL (incl. PostGIS), Supabase, SQL</li>
+              <li><strong>QA & Automation:</strong> Postman API testing, Jam, Playwright, Puppeteer, Cheerio, web scraping</li>
+              <li><strong>Cloud & Tools:</strong> AWS, Vercel, Docker, Git &amp; GitHub, Mapbox GL, Shopify API, Microsoft Office</li>
+              <li><strong>Focus areas:</strong> AI / Machine Learning, vector databases, developer tooling</li>
+            </ul>
+
+            <!-- Key Projects -->
+            <div class="cv-section-title">Highlighted Projects</div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>Trix Mart — University Marketplace</span>
+                <span>Next.js 14, React 18, TypeScript, Supabase</span>
+              </div>
+              <p class="cv-text">
+                University focused marketplace connecting students with student owned businesses: shopping, authentication, university selection, checkout, seller tools, and verification infrastructure. Backed by a Node.js/Express WhatsApp onboarding bot (whatsapp-web.js + PostgreSQL). Live at trixmart.ng.
+              </p>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>Artisian — Location Based Service Finder</span>
+                <span>React 19, TypeScript, Mapbox GL, Node.js, PostGIS</span>
+              </div>
+              <p class="cv-text">
+                Platform that helps users find nearby roadside and mobile service providers (vulcanizers, tailors, cobblers, barbers) with GPS detection, interactive maps, routing, provider navigation, and an admin dashboard. Live at thesenpcs.com.
+              </p>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>TdotWheels Repricer — Ecommerce Automation</span>
+                <span>Node.js, Express, Shopify API, Playwright, Supabase</span>
+              </div>
+              <p class="cv-text">
+                Automation system for T-Dot Wheels that integrates with Shopify and Supabase and uses browser automation / web scraping to retrieve pricing and product data, then updates and manages pricing automatically.
+              </p>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <span>Canton Fair Web App — Offline First PWA</span>
+                <span>Vue 3, IndexedDB, Node.js, PostgreSQL</span>
+              </div>
+              <p class="cv-text">
+                Offline first Progressive Web App for supplier data management at the Canton Fair with zero internet dependency, backed by a sync engine that background syncs local data.
+              </p>
+            </div>
+
+            <!-- Honors & Leadership -->
+            <div class="cv-section-title">Leadership &amp; Notable Achievements</div>
+            <ul class="cv-bullet-list">
+              <li><strong>COO &amp; Co-Founder</strong> &mdash; Trix Mart, a university focused marketplace for student owned businesses.</li>
+              <li><strong>E-Mannequin Application</strong> &mdash; Signed a ₦10M contract (Feb–Jul 2025) to build an app rendering 3D animated lookalikes of individuals.</li>
+              <li><strong>Nigerian Legal RAG System</strong> &mdash; Initiated a ₦2M project (Jan–Mar 2026) building a generative AI model that provides Lagos State legal guidance from the laws it is trained on.</li>
+            </ul>
+          </div>
+
+          <a href="#download" onclick="window.downloadCV(event)" class="btn-download-cv">
+            <svg viewBox="0 0 1024 1024"><path d="M505.7 661a8 8 0 0 0 12.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"/></svg> &nbsp;Download CV
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= Footer ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 text-center">
+            <h3>Copyright &copy; 2026 AO.</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" class="scroll-to-top" aria-label="Scroll to Top">
+      <svg viewBox="0 0 1024 1024"><path d="M868 545.5L536.1 213.6a31.96 31.96 0 0 0-45.1 0L159.1 545.5c-6.3 6.3-6.3 16.4 0 22.6l45.1 45.1c6.3 6.3 16.4 6.3 22.6 0L482 358.9V800c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V358.9l255.2 254.3c6.3 6.3 16.4 6.3 22.6 0l45.1-45.1c6.2-6.3 6.2-16.4-.1-22.6z"/></svg>
+    </button>
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

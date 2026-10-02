@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d2419"/>
+      <stop offset="100%" stop-color="#06130c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Orbit -->
+  <circle cx="250" cy="195" r="150" fill="none" stroke="#15803d" stroke-width="1.5" stroke-dasharray="6,8" opacity="0.6"/>
+  <circle cx="250" cy="195" r="178" fill="none" stroke="#1db954" stroke-width="1" stroke-dasharray="4,12" opacity="0.4"/>
+
+  <!-- Central Workstation Card -->
+  <rect x="45" y="60" width="410" height="215" rx="16" fill="url(#card-grad)" stroke="#1db954" stroke-width="2"/>
+  <!-- Top bar -->
+  <rect x="45" y="60" width="410" height="30" rx="16" fill="#11301f"/>
+  <circle cx="65" cy="75" r="5" fill="#ff5f56"/>
+  <circle cx="80" cy="75" r="5" fill="#ffbd2e"/>
+  <circle cx="95" cy="75" r="5" fill="#27c93f"/>
+  <text x="250" y="80" fill="#74c69d" font-family="sans-serif" font-size="12" text-anchor="middle">anthony@activedge: ~</text>
+
+  <!-- Terminal Content inside Card -->
+  <g font-family="monospace" font-size="12.5" fill="#fff">
+    <text x="62" y="120"><tspan fill="#1db954">$</tspan> cat anthony.json</text>
+    <text x="62" y="144" fill="#00d2d3">"role": "Backend Developer",</text>
+    <text x="62" y="166" fill="#56d98a">"stack": ["React", "Node.js", "PostgreSQL"],</text>
+    <text x="62" y="188" fill="#8be0a9">"passion": ["Basketball", "Development"],</text>
+    <text x="62" y="210" fill="#1dd1a1">"status": "Open to opportunities"</text>
+    <text x="62" y="240"><tspan fill="#1db954">$</tspan> <tspan fill="#fff" opacity="0.8">_</tspan></text>
+  </g>
+
+  <!-- Floating Badges -->
+  <!-- Badge 1: University / Major -->
+  <g transform="translate(30, 298)">
+    <rect width="160" height="54" rx="10" fill="#08160f" stroke="#74c69d" stroke-width="1.5"/>
+    <text x="15" y="24" fill="#1db954" font-family="sans-serif" font-weight="bold" font-size="12">Nile University</text>
+    <text x="15" y="42" fill="#bbb" font-family="sans-serif" font-size="10">B.Sc. Computer Science</text>
+  </g>
+
+  <!-- Badge 2: Organization role -->
+  <g transform="translate(310, 298)">
+    <rect width="160" height="54" rx="10" fill="#08160f" stroke="#74c69d" stroke-width="1.5"/>
+    <text x="15" y="24" fill="#1db954" font-family="sans-serif" font-weight="bold" font-size="12">COO / Co-Founder</text>
+    <text x="15" y="42" fill="#bbb" font-family="sans-serif" font-size="10">Trix Mart</text>
+  </g>
+
+  <!-- Badge 3: City, Country -->
+  <g transform="translate(170, 362)">
+    <rect width="160" height="32" rx="10" fill="#08160f" stroke="#1db954" stroke-width="1.5"/>
+    <text x="80" y="21" fill="#fff" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Lagos, Nigeria</text>
+  </g>
+</svg>
